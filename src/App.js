@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 import CabinConfirmation from './components/CabinTable/CabinConfirmation'
 import Footer from './pages/Footer';
 import CabinsBookings from './components/CabinTable/CabinsBookings';
+import Details from './pages/Details';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ function App() {
             <Route exact path='/' element={<Home />} />
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/register' element={<Register />} />
+            <Route path="/product/:id" element={<Details />} exact />
             <Route exact path='/product' element={<Products />} />
             <Route exact path='/about' element={<About />} />
             <Route exact path='/contact' element={<Contact />} />
@@ -47,6 +49,7 @@ function App() {
         </div>
       </Router>
       <Footer/>
+     
     </DataProvider>
   );
 }

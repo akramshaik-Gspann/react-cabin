@@ -13,7 +13,8 @@ import {DataProvider} from './components/Context'
 import Products from './pages/Products';
 import About from './pages/About';
 import Contact from './pages/Contact';
-
+import CabinConfirmation from './components/CabinTable/CabinConfirmation'
+import Footer from './pages/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -39,9 +40,12 @@ function App() {
             <Route exact path='/product' element={<Products />} />
             <Route exact path='/about' element={<About />} />
             <Route exact path='/contact' element={<Contact />} />
+
+            <Route path="/cabinconfirmation" element={<CabinConfirmation />} />
           </Routes>
         </div>
       </Router>
+      <Footer/>
     </DataProvider>
   );
 }

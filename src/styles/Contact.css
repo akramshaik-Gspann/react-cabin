@@ -1,0 +1,42 @@
+.contactimg{
+    background: url('../Images/contimg.jpg');
+height: 20rem;
+}
+.namefooter{
+    color: cadetblue;
+}
+.contactimg h1{
+    color: white;
+    font-weight: 600;
+    padding: 20px 46px;
+}
+.contactimg p{
+    color: white;
+    padding-left: 55px;
+   
+}
+.contact1{
+    background: #798fa3;
+    padding: 21px 0px;
+    margin-left: 50px;
+    border-radius: 27px;
+}
+/* .contact1 h5,p{
+    color: white;
+} */
+.contact2 p{
+    color: black;
+}
+.contact2{
+    text-align: center;
+    background: #d2e0ee;
+    padding: 21px 0px;
+    margin-left: 50px;
+    border-radius: 27px;
+}
+.contact3{
+    text-align: center;
+}
+.contact3 p{
+    color: black;
+}

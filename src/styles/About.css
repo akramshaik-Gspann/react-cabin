@@ -1,0 +1,72 @@
+.aboutimg{
+    background: url('https://imageio.forbes.com/specials-images/imageserve/625e1fc23b492de685a2adc7/0x0.jpg?format=jpg&width=1200');
+height: 20rem;
+}
+.aboutimg p {
+    color: aliceblue;
+ 
+ padding-left: 55px;
+    font-weight: 700;
+}
+.aboutimg h2{
+    color: white;
+    padding: 20px 46px;
+    font-weight: 700;
+}
+.abouttext h1{
+    font-weight: 700;
+    padding-top: 40px;
+    text-align: center;
+}
+.abouttext p{
+    text-align: center;
+    color: rgb(185, 169, 169);
+}
+.about1 h1{
+text-align: center;
+font-weight: 700;
+}
+.about1 p{
+    text-align: center;
+    color: rgb(185, 169, 169);
+}
+.about2 h2{
+    text-align: center;
+     font-weight: 600;
+}
+.about3{
+    border: 2px solid #ccc;
+    padding: 10px 0px;
+    margin: 0px 26px;
+    border-radius: 20px;
+}
+.about3 h5{
+    text-align: center;
+    font-weight: 600;
+}
+.about3 p{
+    color: black;
+    text-align: center;
+}
+.about4 h2{
+    text-align: center;
+font-weight: 700;
+}
+.about4 p{
+    text-align: center;
+    color: rgb(185, 169, 169);
+}
+.about5{
+    border-radius: 7%;
+    background-color: #2d5050;
+    margin: 10px 10px;
+    padding: 16px 0px;
+}
+.about5 h5{
+    text-align: center;
+    color: white;
+}
+.about5 p{
+    color: rgb(185, 169, 169);
+    text-align: center;
+}

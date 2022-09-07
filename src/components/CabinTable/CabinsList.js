@@ -1,9 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Modal } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
+import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
 
 const CabinsList = ({ getBookId }) => {
     const [cabins, setCabins] = useState([]);
+    const [show, setShow] = useState(false);
+    const [showCabinData, setCabinData] = useState({title:"" });
+
+  const handleClose = () => setShow(false);
+  const handleShow = (doc) =>{
+    setCabinData(doc);
+    setShow(true);
+  } 
+  const updateHandler = () =>{
+    console.log(showCabinData);
+    // await CabinDataService.updateCabin(id, newCabin);
+  }
     useEffect(() => {
         getCabins();
     }, []);
@@ -51,10 +64,24 @@ const CabinsList = ({ getBookId }) => {
                                     <Button
                                         className="edit"
                                         variant="secondary"
-                                        onClick={(e) => getBookId(doc.id)}
+                                        onClick={(e) => handleShow(doc)}
+                                        // onClick={handleShow}
                                     >
                                         <i className="fa fa-pencil" aria-hidden="true"></i>
                                     </Button>
+                                    <Modal className="right" show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                            </Modal.Header>
+                            <Modal.Body>
+                              <center>
+                                {/* <input  value={showCabinData.title} /> */}
+                                
+            <button onClick={updateHandler}>UPdate</button>
+          
+
+                              </center>
+                            </Modal.Body>
+                          </Modal>
                                     <Button
                                         variant="danger"
                                         className="delete"

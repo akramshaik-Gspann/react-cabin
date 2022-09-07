@@ -15,6 +15,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import CabinConfirmation from './components/CabinTable/CabinConfirmation'
 import Footer from './pages/Footer';
+import CabinsBookings from './components/CabinTable/CabinsBookings';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ function App() {
             <Route exact path='/product' element={<Products />} />
             <Route exact path='/about' element={<About />} />
             <Route exact path='/contact' element={<Contact />} />
-
+            <Route path="/allbookings" element={<CabinsBookings />} />
             <Route path="/cabinconfirmation" element={<CabinConfirmation />} />
           </Routes>
         </div>

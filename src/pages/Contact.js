@@ -20,6 +20,7 @@ function Contact() {
                         </center>
                     </div>
                 </div>
+                <br/>
                 <div className="aem-GridColumn aem-GridColumn--default--4">
                     <div className='contact1'>
                         <center>
@@ -28,6 +29,7 @@ function Contact() {
                         </center>
                     </div>
                 </div>
+                <br/>
                 <div className="aem-GridColumn aem-GridColumn--default--4">
                     <div className='contact1'>
                         <center>
@@ -51,6 +53,7 @@ function Contact() {
                                 646-205-8217</p>
                         </div>
                     </div>
+                    <br/>
                     <div className="aem-GridColumn aem-GridColumn--default--4">
                         <div className='contact2'>
                             <h2>Chicago</h2>
@@ -61,6 +64,7 @@ function Contact() {
                                 408-263-3435</p>
                         </div>
                     </div>
+                    <br/>
                     <div className="aem-GridColumn aem-GridColumn--default--4">
                         <div className='contact2'>
                             <h2>London</h2>

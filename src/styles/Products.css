@@ -12,8 +12,8 @@ h3{
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: #0e1b44;
-    text-decoration: underline;
-    text-decoration-color: #fee200;
+    /* text-decoration: underline;
+    text-decoration-color: #fee200; */
     text-decoration-style: solid;
 }
 .card {
@@ -74,4 +74,7 @@ h3{
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 15px 0;
+}
+a{
+  text-decoration: none !important;
 }

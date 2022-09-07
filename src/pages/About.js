@@ -4,7 +4,7 @@ function About() {
     return (
         <>
             <div className='aboutimg'>
-                <h2>Meet Our Transformational Leadership</h2>
+                <h2>Meet Our Transformational Leadership.</h2>
                 <p>Our leadership team with extensive domain expertise enables global<br />
                     organizations to reach the full potential of their existing technology<br />
                     investment and ensure therespective organizational objectives are<br />achieved.”</p>

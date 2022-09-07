@@ -4,7 +4,7 @@ header{
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
-    background-color: #0E1B44;
+    background-color: #e7ebed;
   
 
 }
@@ -14,7 +14,7 @@ header .logo h1{
 header .logo a{
     text-decoration: none;
     text-transform: uppercase;
-    color: #FEE200;
+    color: black;
     
 }
 header nav{
@@ -30,11 +30,11 @@ nav ul{
 nav ul li a{
     text-decoration: none;
     text-transform: uppercase;
-    color: #FEE200;
+    color: black;
     padding: 0 15px;
 }
 nav ul li a:hover{
-    color: #FEE200;
+    color: black;
 }
 nav .nav-cart{
     cursor: pointer;

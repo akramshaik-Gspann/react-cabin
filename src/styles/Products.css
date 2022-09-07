@@ -25,7 +25,7 @@ h3{
   /* box-shadow: 2px 8px 20px #ddd; */
   margin: 10px;
   transition: 0.5s linear;
-  background-color: #0e1b44;
+  background-color: #ffff;
 }
 .card:hover {
   box-shadow: none;
@@ -45,7 +45,7 @@ h3{
 }
 
 .card h3 a {
-  color: #fee200;
+  color: #666;
 }
 
 /* .card h3 a:hover{
@@ -57,7 +57,7 @@ h3{
 .card .cab {
   display: flex;
   justify-content: space-between;
-  color: #fee200;
+  color: #666;
 }
 .card p {
   margin: 10px 0;

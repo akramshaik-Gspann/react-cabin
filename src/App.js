@@ -18,6 +18,7 @@ import Footer from './pages/Footer';
 import CabinsBookings from './components/CabinTable/CabinsBookings';
 import Details from './pages/Details';
 
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {

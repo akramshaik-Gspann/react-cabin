@@ -1,19 +1,19 @@
 .footer{
-    background-color: #0E1B44;
+    background-color: #e7ebed;
     padding-top: 3rem;
     padding-bottom: 2rem;
 }
 
 .footer h5{
-    color: #FEE200;
+    color: black;
 }
 
 .footer ul li a{
-    color: white !important;
+    color: black !important;
 }
 
 .footer p{
-    color: white;
+    color: black;
 }
 
 .footer button{

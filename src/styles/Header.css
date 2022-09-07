@@ -4,14 +4,17 @@ header{
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
-    /* background-color: aquamarine; */
+    background-color: #0E1B44;
   
 
+}
+header .logo h1{
+    font-size: 1.6rem;
 }
 header .logo a{
     text-decoration: none;
     text-transform: uppercase;
-    color: black;
+    color: #FEE200;
     
 }
 header nav{
@@ -21,14 +24,17 @@ nav ul li{
     list-style: none;
     display: inline-block;
 }
+nav ul{
+    margin-bottom: 0;
+}
 nav ul li a{
     text-decoration: none;
     text-transform: uppercase;
-    color: #555;
+    color: #FEE200;
     padding: 0 15px;
 }
 nav ul li a:hover{
-    color: lightseagreen;
+    color: #FEE200;
 }
 nav .nav-cart{
     cursor: pointer;

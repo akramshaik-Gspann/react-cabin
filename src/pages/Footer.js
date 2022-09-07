@@ -1,11 +1,13 @@
 import React from 'react'
-import '../styles/Contact.css'
+import '../styles/Footer.css'
+
 
 function Footer() {
   return (
 
-    <div className='container'>
-      <center><h1 className='namefooter'>@GSPANN</h1></center>
+    <div className='footer'>
+      <div className='container'>
+      {/* <center><h1 className='namefooter'>@GSPANN</h1></center> */}
       <div className="row">
         <div className="col-2">
           <h5>Services</h5>
@@ -47,14 +49,15 @@ function Footer() {
             <div className="d-flex w-100 gap-2">
               <label HtmlFor="newsletter1" className="visually-hidden">Email address</label>
               <input id="newsletter1" type="text" className="form-control" placeholder="Email address" />
-              <button className="btn btn-primary" type="button">Subscribe</button>
+              <button className="btn" type="button">Subscribe</button>
             </div>
           </form>
 
         </div>
       </div>
-      <p>© GSPANN Technologies, Inc., 2022
-        |Privacy Policy|Cookie Policy|CSR Policy|Information Security Policy Statement</p>
+      {/* <p>© GSPANN Technologies, Inc., 2022
+        |Privacy Policy|Cookie Policy|CSR Policy|Information Security Policy Statement</p> */}
+    </div>
     </div>
   )
 }

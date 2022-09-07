@@ -1,60 +1,77 @@
-#product{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+#product {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-.cabindropdown{
-    float:right;
+.cabindropdown {
+  float: right;
 }
-.card{
-    min-width: 300px;
-    min-height: 400px;
-    border: 1px solid #eee;
-    overflow: hidden;
-    padding: 10px;
-    box-shadow: 2px 8px 20px #ddd;
-    margin: 10px;
-    transition: 0.5s linear;
+
+h3{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #0e1b44;
+    text-decoration: underline;
+    text-decoration-color: #fee200;
+    text-decoration-style: solid;
 }
-.card:hover{
-    box-shadow: none;
+.card {
+  min-width: 300px;
+  min-height: 400px;
+  /* border: 1px solid #eee; */
+  overflow: hidden;
+  padding: 10px;
+  /* box-shadow: 2px 8px 20px #ddd; */
+  margin: 10px;
+  transition: 0.5s linear;
+  background-color: #0e1b44;
 }
-.card img{
-    max-width: 300px;
-    width: 100%;
-    height: 100%;
-    max-height: 300px;
-    display: block;
-    object-fit: cover;
+.card:hover {
+  box-shadow: none;
 }
-.card h3{
-    text-transform: uppercase;
-    margin: 10px 0;
+.card img {
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  max-height: 260px;
+  display: block;
+  object-fit: cover;
 }
-.card h3 a{
-    text-decoration: none;
-    color: #333;
+.card h3 {
+  text-transform: uppercase;
+  margin: 10px 0;
+  text-align: center;
 }
-.card h3 a:hover{
+
+.card h3 a {
+  color: #fee200;
+}
+
+/* .card h3 a:hover{
     color: crimson;
 }
 .card span{
     color: crimson;
+} */
+.card .cab {
+  display: flex;
+  justify-content: space-between;
+  color: #fee200;
 }
-.card p{
-    margin: 10px 0;
+.card p {
+  margin: 10px 0;
 }
-.card button{
-    border: none;
-    outline: none;
-    background: #333;
-    color: white;
-    width: 100%;
-    height: 40px;
-    display: block;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 15px 0;
+.card button {
+  border: none;
+  outline: none;
+  background: #333;
+  color: white;
+  width: 100%;
+  height: 40px;
+  display: block;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 15px 0;
 }

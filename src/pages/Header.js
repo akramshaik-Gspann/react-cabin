@@ -24,14 +24,14 @@ export class Header extends Component {
                     <img src={Menu} alt="" width="20" />
                 </div>
                 <div className="logo">
-                    <h1><Link to="/">Cabinbooking</Link></h1>
+                    <h1><Link to="/">Cabin Booking</Link></h1>
                 </div>
                 <nav>
                     <ul className={toggle ? "toggle" : ""}>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/product">Cabins</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/about">My Bookings</Link></li>
                         <li><Link to="/login">Login</Link></li>
                         <li className="close" onClick={this.menuToggle}>
                             <img src={Close} alt="" width="20" />

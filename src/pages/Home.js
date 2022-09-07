@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutInitiate } from '../redux/actions';
 import { useNavigate } from "react-router-dom";
 import "firebase/compat/firestore";
+import '../styles/Home.css';
 
 function Home() {
   const { currentUser } = useSelector((state) => state.user);
@@ -83,7 +84,7 @@ function Home() {
               </div>
             </div>
             <div className="carousel-item">
-              <img src="https://i.pinimg.com/originals/1e/8c/95/1e8c955685931368e6ad6bd042d4df84.jpg" className="d-block w-100" alt="..." height={550} />
+              <img src="https://stylesatlife.com/wp-content/uploads/2020/01/office-cabin-interior-design.jpg" className="d-block w-100" alt="..." height={550} />
               <div class="carousel-caption d-none d-md-block">
 
                 <h4>"Our work environment must be conducive to all employees. It is a place where several people work together under one roof with a joint plan."</h4>
@@ -100,7 +101,7 @@ function Home() {
           </button>
         </div>
       </div>
-      <hr />
+      {/* <hr /> */}
 
       
       {/* <h2>Welcome to Our Site</h2>

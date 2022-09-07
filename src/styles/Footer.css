@@ -1,0 +1,23 @@
+.footer{
+    background-color: #0E1B44;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.footer h5{
+    color: #FEE200;
+}
+
+.footer ul li a{
+    color: white !important;
+}
+
+.footer p{
+    color: white;
+}
+
+.footer button{
+    background-color: #FEE200 !important;
+    color: #0E1B44;
+    font-weight: 500;
+}

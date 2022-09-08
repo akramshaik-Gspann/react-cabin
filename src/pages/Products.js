@@ -28,11 +28,7 @@ export class Products extends Component {
           </center>
         </div>
         {<div>
-<<<<<<< HEAD
                     <div className='cabindropdown'> <label for="cars">Select:</label>
-=======
-                    <div className='cabindropdown'> <label for="cars">Filter:</label> 
->>>>>>> e4c99b6234a73e5c69d34a3794b4941f788a418b
                         <select name="cars" id="cars" onChange={this.filterData} >
                             <option value="default">Team size</option>
                             <option value="asc">Team size Asc</option>

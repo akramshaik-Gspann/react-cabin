@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
 import "../../styles/Login.css";
+import DateTimePicker from 'react-datetime-picker';
 
 const AddCabin = ({ id, setCabinId }) => {
   const [title, setTitle] = useState("");
@@ -122,6 +123,12 @@ const AddCabin = ({ id, setCabinId }) => {
                 value={designation}
                 onChange={(e) => setDesignation(e.target.value)}
               />
+            </InputGroup>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBookAuthor">
+            <InputGroup>
+            <DateTimePicker />
             </InputGroup>
           </Form.Group>
           {/* <ButtonGroup aria-label="Basic example" className="mb-3">

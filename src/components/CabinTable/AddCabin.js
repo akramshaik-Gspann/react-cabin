@@ -82,9 +82,15 @@ const AddCabin = ({ id, setCabinId }) => {
             {message?.msg}
           </Alert>
         )}
+<center><h5>Confirm Booking</h5>
+<div className="cabindata">
+  <p>Cabin Name : <span>KGF</span></p>
+  <p>Cabin Size : <span>7</span></p>
+</div>
+</center>
 
         <Form className="form-signin" onSubmit={handleSubmit}>
-          <center><h5>Confirm Booking</h5></center>
+          
           <Form.Group className="mb-3" controlId="formBookTitle">
             <InputGroup>
               <Form.Control

@@ -126,7 +126,7 @@ const AddCabin = ({ id, setCabinId }) => {
               />
             </InputGroup>
           </Form.Group>
-          <ButtonGroup aria-label="Basic example" className="mb-3">
+          {/* <ButtonGroup aria-label="Basic example" className="mb-3">
             <Button
               disabled={flag}
               variant="success"
@@ -147,10 +147,10 @@ const AddCabin = ({ id, setCabinId }) => {
             >
               Not Available
             </Button>
-          </ButtonGroup>
+          </ButtonGroup> */}
           <div className="col-12 text-center">
             <Button variant="primary" type="Submit">
-              Add/ Update
+              Confirm Bokking
             </Button>
           </div>
         </Form>

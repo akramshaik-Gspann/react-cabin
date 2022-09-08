@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Hero.css";
 import picthree from "../Images/three.jpg";
+import pictwo from '../Images/one.jpg'
 function Herosection() {
   return (
     <div className="container flexcabin">
@@ -50,7 +51,7 @@ function Herosection() {
           </p>
         </div>
         <div class="col-md-6">
-          <img src={picthree} alt="Snow" height={500} width={500} />
+          <img src={pictwo} alt="Snow" height={500} width={500} />
         </div>
       </div>
     </div>

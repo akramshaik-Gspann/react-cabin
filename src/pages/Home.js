@@ -62,7 +62,7 @@ function Home() {
 
 
   return (
-    <div className="myform">
+    <div className="myform container">
 
 
       <div>

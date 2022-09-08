@@ -37,7 +37,7 @@ const Login = () => {
         }
         dispatch(loginInitiate(email, password));
         setState({ email: "", password: "" });
-        navigate('/');
+        navigate('/cabinconfirmation');
     };
 
     const handleChange = (e) => {

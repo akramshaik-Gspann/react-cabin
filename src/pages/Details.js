@@ -27,7 +27,7 @@ function Details (){
                                 <p>{item.Newcabin}</p>
                                 <p>{item.description}</p>
                                 <p>{item.content}</p>
-                                <Link to="/cart" className="cart" onClick={() => addCart(item._id)}>
+                                <Link to="/login" className="cart">
                                     Book Cabin
                                 </Link>
                             </div>

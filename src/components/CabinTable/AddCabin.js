@@ -162,7 +162,7 @@ const AddCabin = ({ id, setCabinId }) => {
           </ButtonGroup> */}
           <div className="col-12 text-center">
             <Button className="signinb" type="Submit">
-              Confirm Bokking
+              Confirm Booking
             </Button>
           </div>
         </Form>

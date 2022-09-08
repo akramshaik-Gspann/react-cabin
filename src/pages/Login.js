@@ -94,7 +94,9 @@ const Login = ({ cabinData }) => {
                             <i className=''></i> Sign In</button>
                     </div>
                     <hr />
+                    <center>
                     <p>Don't have an account ?</p>
+                    </center>
                     <Link to="/register">
                         <div className='text-center'>
                             <button className='btn btn-block signupb' type='button' id='btn-signup'>

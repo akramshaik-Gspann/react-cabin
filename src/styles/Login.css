@@ -87,8 +87,15 @@
   }
 
 
-  #logreg-forms h1{
-    /* color: #FEE200; */
+  #logreg-forms .cabindata{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  #logreg-forms .cabindata span{
+    color: #789;
+    font-weight: 600;
   }
   
   /* Mobile */

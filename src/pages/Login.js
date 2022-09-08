@@ -37,7 +37,7 @@ const Login = () => {
         }
         dispatch(loginInitiate(email, password));
         setState({ email: "", password: "" });
-        navigate('/');
+        navigate('/cabinconfirmation');
     };
 
     const handleChange = (e) => {
@@ -85,13 +85,17 @@ const Login = () => {
                         value={password}
                         required
                     />
-                    <button className='btn btn-secondary btn-block' type='submit'>
-                        <i className='fas fa-sign-in-alt'></i> Sign In</button>
+                    <div className='text-center'>
+                    <button className='btn btn-block signinb' type='submit'>
+                        <i className=''></i> Sign In</button>
+                    </div>
                     <hr />
                     <p>Don't have an account ?</p>
                     <Link to="/register">
-                        <button className='btn btn-primary btn-block' type='button' id='btn-signup'>
-                            <i className='fas fa-user-plus'></i>Sign up New Account</button>
+                        <div className='text-center'>
+                        <button className='btn btn-block signupb' type='button' id='btn-signup'>
+                            <i className=''></i>Sign up New Account</button>
+                        </div>
                     </Link>
                 </form>
             </div>

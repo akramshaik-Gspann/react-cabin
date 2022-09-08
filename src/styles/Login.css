@@ -38,7 +38,7 @@
   }
   #logreg-forms .social-btn {
     font-weight: 100;
-    color: white;
+    color: #FEE200;
     width: 190px;
     font-size: 0.9rem;
   }
@@ -80,15 +80,12 @@
     margin: 0 auto;
   }
 
-  #logreg-forms .signinb{
-    background-color: #FEE200;
-    color: #789;
+  #logreg-forms .signinb, #logreg-forms .signupb{
+    background-color:#789 ;
+    color: #FEE200;
+    font-weight: 600;
   }
 
-  #logreg-forms .signupb{
-    background-color: #FEE200;
-    color: #789;
-  }
 
   #logreg-forms h1{
     /* color: #FEE200; */

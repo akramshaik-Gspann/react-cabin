@@ -10,11 +10,7 @@ function Details (){
     })
     return (
         <>
-        <div className='detailspage'>
-        <h1>Have questions? We’re here <br />to help.</h1>
-          <p>Thanks for your interest in GSPANN. Below are
-          several ways to connect <br />with us. We look forward to hearing from you!</p>
-            </div>
+        
                 {
                     data.map(item =>(
                         <div className="details" key={item._id}>
@@ -34,6 +30,12 @@ function Details (){
                         </div>
                     ))
                 }
+
+<div className='detailspage'>
+        <h1>Have questions? We’re here <br />to help.</h1>
+          <p>Thanks for your interest in GSPANN. Below are
+          several ways to connect <br />with us. We look forward to hearing from you!</p>
+            </div>
             </>
         )
 }

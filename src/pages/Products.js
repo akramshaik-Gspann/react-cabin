@@ -12,7 +12,7 @@ export class Products extends Component {
       <div>
         <div>
           <center>
-            <h3>Over 10+ Cabins Instantly Bookable</h3>
+            <h2>Over 10+ Cabins Instantly Bookable</h2>
           </center>
         </div>
         {/* <div>

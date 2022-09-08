@@ -11,3 +11,12 @@
     flex: 50.33%;
     padding: 5px;
   }
+
+  .flexcabin .meeting{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .flexcabin img{
+    height: 20rem;
+  }

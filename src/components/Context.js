@@ -62,7 +62,7 @@ export class DataProvider extends Component {
             },
             {
                 "_id": "6",
-                "title": "cabin_301",
+                "title": "cabin_206",
                 "src": "https://i.pinimg.com/736x/4c/5f/9b/4c5f9b5b33ac4833bfbbfc395df152ce.jpg",
                 "Newcabin": "Men in Black",
                 "content": "FEATURES: Ac, Light, Capacity, Projector, Board, Marker, Landline",
@@ -73,7 +73,7 @@ export class DataProvider extends Component {
             },
             {
                 "_id": "7",
-                "title": "cabin_302",
+                "title": "cabin_301",
                 "src": "https://i.pinimg.com/736x/0d/26/c7/0d26c76dba1ea102554246985d8a5558.jpg",
                 "Newcabin": "Bahubali",
                 "content": "FEATURES: Ac, Light, Capacity, Wifi access, Projector, Board, Marker, Landline",
@@ -84,7 +84,7 @@ export class DataProvider extends Component {
             },
             {
                 "_id": "8",
-                "title": "cabin_303",
+                "title": "cabin_302",
                 "src": "https://i.pinimg.com/736x/0b/8b/73/0b8b73aca3e72dd6003871aff7d2c298.jpg",
                 "Newcabin": "Little Finger",
                 "content": "FEATURES: Ac, Light, Capacity, Wifi access, Projector, Board, Marker, Landline",
@@ -95,7 +95,7 @@ export class DataProvider extends Component {
             },
             {
                 "_id": "9",
-                "title": "cabin_304",
+                "title": "cabin_303",
                 "src": "https://i.pinimg.com/originals/11/b9/40/11b940e3766632716bf932f61fe61d92.jpg",
                 "Newcabin": "Gost Rider",
                 "content": "FEATURES: Ac, Light, Capacity, Wifi access, Projector, Board, Marker, Landline",
@@ -106,7 +106,7 @@ export class DataProvider extends Component {
             },
             {
                 "_id": "10",
-                "title": "cabin_305",
+                "title": "cabin_304",
                 "src": "https://i.pinimg.com/736x/4c/5f/9b/4c5f9b5b33ac4833bfbbfc395df152ce.jpg",
                 "Newcabin": "Final Destination",
                 "content": "FEATURES: Ac, Light, Capacity, Wifi access, Projector, Board, Marker, Landline",
@@ -117,7 +117,7 @@ export class DataProvider extends Component {
             },
             {
                 "_id": "11",
-                "title": "cabin_222",
+                "title": "cabin_305",
                 "src": "https://64.media.tumblr.com/b8e803259c6b8f6ecdd5882bdbbb77de/4a5743619c1bddc8-95/s540x810/6c6076849f9ca2243a0ae485bae07c42bdaadfd6.jpg",
                 "Newcabin": "Wanted",
                 "content": "FEATURES: Ac, Light, Capacity, Wifi access, Board, Marker, Landline",
@@ -128,7 +128,7 @@ export class DataProvider extends Component {
             },
             {
                 "_id": "12",
-                "title": "cabin_333",
+                "title": "cabin_306",
                 "src": "https://i.pinimg.com/736x/a8/82/27/a8822794050a4989713a0d57163988db.jpg",
                 "Newcabin": "KGF",
                 "content": "FEATURES: Ac, Light, Capacity, Wifi access, Projector, Board, Marker, Landline",

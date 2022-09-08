@@ -6,17 +6,17 @@ import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
 const CabinsList = ({ getBookId }) => {
     const [cabins, setCabins] = useState([]);
     const [show, setShow] = useState(false);
-    const [showCabinData, setCabinData] = useState({title:"" });
+    const [showCabinData, setCabinData] = useState({ title: "" });
 
-  const handleClose = () => setShow(false);
-  const handleShow = (doc) =>{
-    setCabinData(doc);
-    setShow(true);
-  } 
-  const updateHandler = () =>{
-    console.log(showCabinData);
-    // await CabinDataService.updateCabin(id, newCabin);
-  }
+    const handleClose = () => setShow(false);
+    const handleShow = (doc) => {
+        setCabinData(doc);
+        setShow(true);
+    }
+    const updateHandler = () => {
+        console.log(showCabinData);
+        // await CabinDataService.updateCabin(id, newCabin);
+    }
     useEffect(() => {
         getCabins();
     }, []);
@@ -46,7 +46,7 @@ const CabinsList = ({ getBookId }) => {
                         <th>Emp Name</th>
                         <th>Emp Email</th>
                         <th>Emp Designation</th>
-                        {/* <th>Status</th> */}
+                        {/* <th>Date & Time</th> */}
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -59,28 +59,25 @@ const CabinsList = ({ getBookId }) => {
                                 <td>{doc.name}</td>
                                 <td>{doc.email}</td>
                                 <td>{doc.designation}</td>
-                                {/* <td>{doc.status}</td> */}
+                                {/* <td>{doc.date}</td> */}
                                 <td>
                                     <Button
                                         className="edit"
                                         variant="secondary"
                                         onClick={(e) => handleShow(doc)}
-                                        // onClick={handleShow}
+                                    // onClick={handleShow}
                                     >Edit <i className="fa fa-pencil" aria-hidden="true"></i>
                                     </Button>
                                     <Modal className="right" show={show} onHide={handleClose}>
-                            <Modal.Header closeButton>
-                            </Modal.Header>
-                            <Modal.Body>
-                              <center>
-                                {/* <input  value={showCabinData.title} /> */}
-                                
-            <button onClick={updateHandler}>UPdate</button>
-          
-
-                              </center>
-                            </Modal.Body>
-                          </Modal>
+                                        <Modal.Header closeButton>
+                                        </Modal.Header>
+                                        <Modal.Body>
+                                            <center>
+                                                {/* <input  value={showCabinData.title} /> */}
+                                                <button onClick={updateHandler}>Update</button>
+                                            </center>
+                                        </Modal.Body>
+                                    </Modal>
                                     <Button
                                         variant="danger"
                                         className="delete"

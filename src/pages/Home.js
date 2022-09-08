@@ -105,10 +105,12 @@ function Home() {
           </button>
         </div>
       </div>
-      <Herosection/>
+      <Herosection />
       {/* <hr /> */}
+      <button className='btn btn-danger' onClick={handleAuth}>Logout</button>
 
-      
+
+
       {/* <h2>Welcome to Our Site</h2>
       <button className='btn btn-danger' onClick={handleAuth}>Logout</button> */}
 

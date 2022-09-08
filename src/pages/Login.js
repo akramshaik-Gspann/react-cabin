@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { fbSignInInitiate, googleSignInInitiate, loginInitiate } from '../redux/actions';
 import "../styles/Login.css";
-const Login = () => {
+const Login = ({ cabinData }) => {
 
     const [state, setState] = useState({
         email: "",
@@ -15,19 +15,23 @@ const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (currentUser) {
-            navigate('/');
+        console.log("Cabin Data", cabinData.length, "current user", currentUser)
+        if (currentUser && cabinData._id) {
+            navigate('/cabinconfirmation');
+        }
+        else {
+            navigate('/login')
         }
     }, [currentUser, navigate]);
 
     const dispatch = useDispatch();
 
-    const handleGoogleSignIn = () => { 
+    const handleGoogleSignIn = () => {
         dispatch(googleSignInInitiate());
     };
     const handleFBSignIn = () => {
         dispatch(fbSignInInitiate());
-     };
+    };
 
 
     const handleSubmit = (e) => {
@@ -86,15 +90,17 @@ const Login = () => {
                         required
                     />
                     <div className='text-center'>
-                    <button className='btn btn-block signinb' type='submit'>
-                        <i className=''></i> Sign In</button>
+                        <button className='btn btn-block signinb' type='submit'>
+                            <i className=''></i> Sign In</button>
                     </div>
                     <hr />
+                    <center>
                     <p>Don't have an account ?</p>
+                    </center>
                     <Link to="/register">
                         <div className='text-center'>
-                        <button className='btn btn-block signupb' type='button' id='btn-signup'>
-                            <i className=''></i>Sign up New Account</button>
+                            <button className='btn btn-block signupb' type='button' id='btn-signup'>
+                                <i className=''></i>Sign up New Account</button>
                         </div>
                     </Link>
                 </form>

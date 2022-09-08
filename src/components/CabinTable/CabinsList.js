@@ -66,8 +66,7 @@ const CabinsList = ({ getBookId }) => {
                                         variant="secondary"
                                         onClick={(e) => handleShow(doc)}
                                         // onClick={handleShow}
-                                    >
-                                        <i className="fa fa-pencil" aria-hidden="true"></i>
+                                    >Edit <i className="fa fa-pencil" aria-hidden="true"></i>
                                     </Button>
                                     <Modal className="right" show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
@@ -86,8 +85,7 @@ const CabinsList = ({ getBookId }) => {
                                         variant="danger"
                                         className="delete"
                                         onClick={(e) => deleteHandler(doc.id)}
-                                    >
-                                        <i className="fa fa-trash" aria-hidden="true"></i>
+                                    >Delete <i className="fa fa-trash" aria-hidden="true"></i>
                                     </Button>
                                 </td>
                             </tr>

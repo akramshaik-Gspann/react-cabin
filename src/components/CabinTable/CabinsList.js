@@ -59,7 +59,7 @@ const CabinsList = ({ getBookId }) => {
                                 <td>{doc.name}</td>
                                 <td>{doc.email}</td>
                                 <td>{doc.designation}</td>
-                                <td>{doc.date}</td>
+                                {/* <td>{doc.date}</td> */}
                                 <td>
                                     <Button
                                         className="edit"

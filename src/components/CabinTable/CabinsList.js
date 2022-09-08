@@ -46,7 +46,7 @@ const CabinsList = ({ getBookId }) => {
                         <th>Emp Name</th>
                         <th>Emp Email</th>
                         <th>Emp Designation</th>
-                        <th>Date & Time</th>
+                        {/* <th>Date & Time</th> */}
                         <th>Action</th>
                     </tr>
                 </thead>

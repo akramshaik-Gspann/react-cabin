@@ -24,6 +24,11 @@ const loginSuccess = (user) => ({
     payload: user,
 });
 
+const authenticatedUser = (user) => ({
+    type: types.AUTHENTICATED_USER,
+    payload: user,
+});
+
 const loginFail = (error) => ({
     type: types.LOGIN_FAIL,
     payload: error,
@@ -95,6 +100,7 @@ export const loginInitiate = (email, password) => {
             .signInWithEmailAndPassword(email, password)
             .then(({ user }) => {
                 dispatch(loginSuccess(user));
+                dispatch(authenticatedUser(user));
             })
             .catch((error) => dispatch(loginFail(error.message)));
     };

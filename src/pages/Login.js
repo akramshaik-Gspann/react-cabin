@@ -4,13 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { fbSignInInitiate, googleSignInInitiate, loginInitiate } from '../redux/actions';
 import "../styles/Login.css";
 const Login = ({ cabinData }) => {
-
     const [state, setState] = useState({
         email: "",
         password: "",
     });
     const { email, password } = state;
-
     const { currentUser } = useSelector((state) => state.user);
     const navigate = useNavigate();
 
@@ -25,14 +23,12 @@ const Login = ({ cabinData }) => {
     }, [currentUser, navigate]);
 
     const dispatch = useDispatch();
-
     const handleGoogleSignIn = () => {
         dispatch(googleSignInInitiate());
     };
     const handleFBSignIn = () => {
         dispatch(fbSignInInitiate());
     };
-
 
     const handleSubmit = (e) => {
         e.preventDefault();

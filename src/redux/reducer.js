@@ -29,6 +29,11 @@ const userReducer = (state = initialState, action) => {
                 loading: false,
                 currentUser: action.payload,
             }
+        case types.AUTHENTICATED_USER:
+            return {
+                ...state,
+                currentUser: action.payload,
+            }
         case types.REGISTER_SUCCESS:
         case types.LOGIN_SUCCESS:
         case types.GOOGLE_SIGN_IN_SUCCESS:

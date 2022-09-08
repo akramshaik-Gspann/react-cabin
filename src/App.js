@@ -17,13 +17,22 @@ import CabinConfirmation from './components/CabinTable/CabinConfirmation'
 import Footer from './pages/Footer';
 import CabinsBookings from './components/CabinTable/CabinsBookings';
 import Details from './pages/Details';
-
+import store from './redux/store';
 
 function App() {
   const dispatch = useDispatch();
+  console.log("Store", store.getState())
+  const [profile, setProfile] = useState();
+
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       console.log(authUser.displayName);
+      const user = store.getState();
+      const profileDate = {
+        name: user._delegate.displayName,
+        email: user._delegate.email
+      }
+      setProfile(profileDate)
       if (authUser) {
         dispatch(setUser(authUser))
       } else {
@@ -31,6 +40,7 @@ function App() {
       }
     })
   }, [dispatch])
+
   const [cabinData, setCabinData] = useState([]);
 
   return (
@@ -39,7 +49,7 @@ function App() {
         <Header />
         <div className="App">
           <Routes>
-            <Route exact path='/' element={<Home />} />
+            <Route exact path='/' element={<Home profile={profile} />} />
             <Route exact path='/login' element={<Login cabinData={cabinData} />} />
             <Route exact path='/register' element={<Register />} />
             <Route path="/product/:id" element={<Details setCabinData={setCabinData} />} exact />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
+import "../../styles/Login.css";
 
 const AddCabin = ({ id, setCabinId }) => {
   const [title, setTitle] = useState("");
@@ -69,7 +70,7 @@ const AddCabin = ({ id, setCabinId }) => {
   }, [id]);
   return (
     <>
-      <div className="p-4 box">
+      <div className="p-4 box" id="logreg-forms">
         {message?.msg && (
           <Alert
             variant={message?.error ? "danger" : "success"}
@@ -80,10 +81,10 @@ const AddCabin = ({ id, setCabinId }) => {
           </Alert>
         )}
 
-        <Form onSubmit={handleSubmit}>
+        <Form className="form-signin" onSubmit={handleSubmit}>
+          <center><h5>Confirm Booking</h5></center>
           <Form.Group className="mb-3" controlId="formBookTitle">
             <InputGroup>
-              <InputGroup.Text id="formBookTitle">B</InputGroup.Text>
               <Form.Control
                 type="text"
                 placeholder="Cabin Name"
@@ -95,7 +96,6 @@ const AddCabin = ({ id, setCabinId }) => {
 
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
-              <InputGroup.Text id="formBookAuthor">A</InputGroup.Text>
               <Form.Control
                 type="text"
                 placeholder="Emp Name"
@@ -106,7 +106,6 @@ const AddCabin = ({ id, setCabinId }) => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
-              <InputGroup.Text id="formBookAuthor">A</InputGroup.Text>
               <Form.Control
                 type="email"
                 placeholder="Emp Email"
@@ -117,7 +116,6 @@ const AddCabin = ({ id, setCabinId }) => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
-              <InputGroup.Text id="formBookAuthor">A</InputGroup.Text>
               <Form.Control
                 type="text"
                 placeholder="Emp Designation"
@@ -149,7 +147,7 @@ const AddCabin = ({ id, setCabinId }) => {
             </Button>
           </ButtonGroup> */}
           <div className="col-12 text-center">
-            <Button variant="primary" type="Submit">
+            <Button className="signinb" type="Submit">
               Confirm Bokking
             </Button>
           </div>

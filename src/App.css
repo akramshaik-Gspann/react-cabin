@@ -1,7 +1,8 @@
 .App {
   /* text-align: center; */
 }
-body{
+
+body {
   /* font-family: Open Sans!important; */
 }
 
@@ -31,24 +32,42 @@ body{
   color: #61dafb;
 }
 
-.row{
-margin: 0px;
-padding: 15px;
+.box {
+  width: 40%;
+  margin: auto;
 }
-.button_refresh{
+
+.row {
+  margin: 0px;
+  padding: 15px;
+}
+
+.button_refresh {
   padding: 0;
   margin-bottom: 5px;
 }
-tr, th{
+
+.box .form-signin {
+  padding: 0px !important;
+}
+
+h5{
+  margin-bottom: 15px;
+}
+tr,
+th {
   vertical-align: middle;
 }
-.edit{
+
+.edit {
   margin-right: 10px;
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

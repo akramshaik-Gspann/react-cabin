@@ -33,7 +33,7 @@ const CabinsList = ({ getBookId }) => {
     };
     return (
         <>
-            <div className="mb-2">
+            <div className="button_refresh">
                 <Button variant="dark edit" onClick={getCabins}>
                     Refresh List
                 </Button>
@@ -46,7 +46,7 @@ const CabinsList = ({ getBookId }) => {
                         <th>Emp Name</th>
                         <th>Emp Email</th>
                         <th>Emp Designation</th>
-                        <th>Status</th>
+                        {/* <th>Status</th> */}
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -59,7 +59,7 @@ const CabinsList = ({ getBookId }) => {
                                 <td>{doc.name}</td>
                                 <td>{doc.email}</td>
                                 <td>{doc.designation}</td>
-                                <td>{doc.status}</td>
+                                {/* <td>{doc.status}</td> */}
                                 <td>
                                     <Button
                                         className="edit"

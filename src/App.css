@@ -39,6 +39,9 @@ padding: 15px;
   padding: 0;
   margin-bottom: 5px;
 }
+tr, th{
+  vertical-align: middle;
+}
 .edit{
   margin-right: 10px;
 }

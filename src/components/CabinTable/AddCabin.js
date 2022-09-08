@@ -12,10 +12,11 @@ const AddCabin = ({ id, setCabinId }) => {
   const [status, setStatus] = useState("Available");
   const [flag, setFlag] = useState(true);
   const [message, setMessage] = useState({ error: false, msg: "" });
+  const [date, setDate] = useState(new Date());
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
-    if (title === "" || name === "" || email === "" || designation === "") {
+    if (title === "" || name === "" || email === "" || designation === "" || date === "") {
       setMessage({ error: true, msg: "All fields are mandatory!" });
       return;
     }
@@ -23,7 +24,8 @@ const AddCabin = ({ id, setCabinId }) => {
       title,
       name,
       email,
-      designation
+      designation,
+      date
     };
     console.log(newCabin);
 
@@ -44,6 +46,7 @@ const AddCabin = ({ id, setCabinId }) => {
     setName("");
     setEmail("");
     setDesignation("");
+    setDate("");
   };
 
   const editHandler = async () => {
@@ -55,6 +58,7 @@ const AddCabin = ({ id, setCabinId }) => {
       setName(docSnap.data().name);
       setEmail(docSnap.data().email);
       setDesignation(docSnap.data().designation);
+      setDate(docSnap.data().date);
     } catch (err) {
       setMessage({ error: true, msg: err.message });
     }
@@ -120,6 +124,11 @@ const AddCabin = ({ id, setCabinId }) => {
                 value={designation}
                 onChange={(e) => setDesignation(e.target.value)}
               />
+            </InputGroup>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBookAuthor">
+            <InputGroup>
+            <DateTimePicker className="form-control" onChange={setDate} value={date} />
             </InputGroup>
           </Form.Group>
 

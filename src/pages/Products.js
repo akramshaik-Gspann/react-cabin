@@ -28,9 +28,9 @@ export class Products extends Component {
           </center>
         </div>
         {<div>
-                    <div className='cabindropdown'> <label for="cars">Filter:</label> 
+                    <div className='cabindropdown'> <label for="cars">Select:</label>
                         <select name="cars" id="cars" onChange={this.filterData} >
-                            <option value="default">Default</option>
+                            <option value="default">Team size</option>
                             <option value="asc">Team size Asc</option>
                             <option value="desc">Team size Desc</option>
                         </select></div>

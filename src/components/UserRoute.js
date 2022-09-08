@@ -1,14 +1,15 @@
-import React from 'react';
-import { Route } from "react-router-dom";
-import { useSelector } from "react-redux";
-import LoadingToRedirect from './LoadingToRedirect';
+import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+export { UserRoute };
 
-const UserRoute = ({ children, ...rest }) => {
+function UserRoute({ children }) {
   const { currentUser } = useSelector((state) => state.user);
-  return currentUser ? <Route {...rest} /> : <LoadingToRedirect />;
-  // console.log(currentUser);
-  // return (<Route {...rest} render={props =>
-  //   (currentUser ? (React.createElement(children, props)) : (<Navigate to={{ pathname: '/login', state: { from: props.location } }} />))} />)
-};
+    if (!currentUser) {
+        // not logged in so redirect to login page with the return url
+        return <Navigate to="/login"/>
+    }
+    // authorized so return child components
+    return children;
+}
 
 export default UserRoute

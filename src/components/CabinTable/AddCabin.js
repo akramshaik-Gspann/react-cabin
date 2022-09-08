@@ -12,7 +12,6 @@ const AddCabin = ({ id, setCabinId }) => {
   const [status, setStatus] = useState("Available");
   const [flag, setFlag] = useState(true);
   const [message, setMessage] = useState({ error: false, msg: "" });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
@@ -24,8 +23,7 @@ const AddCabin = ({ id, setCabinId }) => {
       title,
       name,
       email,
-      designation,
-      status,
+      designation
     };
     console.log(newCabin);
 
@@ -57,7 +55,6 @@ const AddCabin = ({ id, setCabinId }) => {
       setName(docSnap.data().name);
       setEmail(docSnap.data().email);
       setDesignation(docSnap.data().designation);
-      setStatus(docSnap.data().status);
     } catch (err) {
       setMessage({ error: true, msg: err.message });
     }
@@ -126,11 +123,6 @@ const AddCabin = ({ id, setCabinId }) => {
             </InputGroup>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBookAuthor">
-            <InputGroup>
-            <DateTimePicker />
-            </InputGroup>
-          </Form.Group>
           {/* <ButtonGroup aria-label="Basic example" className="mb-3">
             <Button
               disabled={flag}

@@ -31,6 +31,17 @@ body{
   color: #61dafb;
 }
 
+.row{
+margin: 0px;
+padding: 15px;
+}
+.button_refresh{
+  padding: 0;
+  margin-bottom: 5px;
+}
+.edit{
+  margin-right: 10px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

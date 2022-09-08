@@ -9,7 +9,12 @@ function CabinsBookings() {
     };
     return (
         <>
-            <CabinsList getBookId={getCabinIdHandler}  />
+            <center><h2>My Cabin Bookings</h2></center>
+            <div className='row'>
+                <CabinsList getBookId={getCabinIdHandler} />
+            </div>
+
+
         </>
     )
 }

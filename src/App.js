@@ -18,35 +18,25 @@ import Footer from './pages/Footer';
 import CabinsBookings from './components/CabinTable/CabinsBookings';
 import Details from './pages/Details';
 import store from './redux/store';
-
 function App() {
   const dispatch = useDispatch();
   console.log("Store", store.getState())
   const [profile, setProfile] = useState();
-
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log(authUser.displayName);
-      const user = store.getState();
-      const profileDate = {
-        name: user._delegate.displayName,
-        email: user._delegate.email
-      }
-      setProfile(profileDate)
       if (authUser) {
+        setProfile(authUser)
         dispatch(setUser(authUser))
       } else {
         dispatch(setUser(null))
       }
     })
   }, [dispatch])
-
   const [cabinData, setCabinData] = useState([]);
-
   return (
     <DataProvider>
       <Router>
-        <Header />
+        <Header profile={profile}  setProfile={setProfile}/>
         <div className="App">
           <Routes>
             <Route exact path='/' element={<Home profile={profile} />} />
@@ -56,15 +46,13 @@ function App() {
             <Route exact path='/product' element={<Products />} />
             {/* <Route exact path='/about' element={<About />} />
             <Route exact path='/contact' element={<Contact />} /> */}
-            <Route path="/allbookings" element={<CabinsBookings />} />
+            <Route path="/allbookings" element={<CabinsBookings profile={profile} />} />
             <Route path="/cabinconfirmation" element={<UserRoute> <CabinConfirmation /> </UserRoute>} />
           </Routes>
         </div>
       </Router>
       <Footer />
-
     </DataProvider>
   );
 }
-
 export default App;

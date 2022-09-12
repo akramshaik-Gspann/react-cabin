@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { fbSignInInitiate, googleSignInInitiate, loginInitiate } from '../redux/actions';
 import "../styles/Login.css";
+import { logoutInitiate } from '../redux/actions';
 const Login = ({ cabinData }) => {
     const [state, setState] = useState({
         email: "",
@@ -38,6 +39,8 @@ const Login = ({ cabinData }) => {
         dispatch(loginInitiate(email, password));
         setState({ email: "", password: "" });
         navigate('/cabinconfirmation');
+        dispatch(logoutInitiate());
+        navigate('/');
     };
 
     const handleChange = (e) => {

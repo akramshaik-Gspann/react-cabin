@@ -59,12 +59,8 @@ function Home() {
     setDate("");
   };
 
-
-
   return (
     <div className="myform container">
-
-
       <div>
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
@@ -108,8 +104,6 @@ function Home() {
       <Herosection />
       {/* <hr /> */}
       <button className='btn btn-danger' onClick={handleAuth}>Logout</button>
-
-
 
       {/* <h2>Welcome to Our Site</h2>
       <button className='btn btn-danger' onClick={handleAuth}>Logout</button> */}

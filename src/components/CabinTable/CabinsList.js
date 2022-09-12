@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Table, Modal } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
 import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
+import {  useSelector } from "react-redux";
 
-const CabinsList = ({ getBookId }) => {
+const CabinsList = ({ getBookId, profile }) => {
+
+    console.log(profile);
     const [cabins, setCabins] = useState([]);
     const [show, setShow] = useState(false);
     const [showCabinData, setCabinData] = useState({ title: "" });
 
+    const { currentUser } = useSelector((state) => state.user);
     const handleClose = () => setShow(false);
     const handleShow = (doc) => {
         setCabinData(doc);
@@ -23,7 +27,26 @@ const CabinsList = ({ getBookId }) => {
 
     const getCabins = async () => {
         const data = await CabinDataService.getAllCabins();
-        console.log(data.docs);
+        console.log(data.docs[2]);
+        console.log(data)
+        console.log(data.docs)
+        
+        console.log(profile._delegate.email);
+
+        setCabins(data.docs.filter((doc) => { 
+        console.log(doc.data().email === profile._delegate.email ); 
+           if(doc.data().email !== profile._delegate.email){
+            return doc;
+           };
+        }));
+
+        // setCabins(data.docs.filter(doc => {
+        //     console.log(profile._delegate.email)
+        //     if (data.docs._delegate.email === data.docs._document.data.value.mapValue.fields.email) {
+        //         return doc
+        //     }
+        // }));
+        // setCabins(data.docs.filter((doc) => ({ ...doc.data(), id: doc.id })));
         setCabins(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 

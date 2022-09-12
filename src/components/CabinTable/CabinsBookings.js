@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import CabinsList from './CabinsList';
 
-function CabinsBookings() {
+function CabinsBookings({profile}) {
     const [cabinId, setCabinId] = useState("");
 
+    console.log(profile);
+    
     const getCabinIdHandler = (id) => {
         setCabinId(id);
     };
@@ -11,7 +13,7 @@ function CabinsBookings() {
         <>
             <center><h2>My Cabin Bookings</h2></center>
             <div className='row'>
-                <CabinsList getBookId={getCabinIdHandler} />
+                <CabinsList getBookId={getCabinIdHandler} profile={profile}/>
             </div>
 
 

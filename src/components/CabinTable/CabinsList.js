@@ -4,9 +4,13 @@ import CabinDataService from "../CabinTable/CabinService";
 import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
 import {  useSelector } from "react-redux";
 
+<<<<<<< HEAD
 const CabinsList = ({ getBookId, profile }) => {
 
     console.log(profile);
+=======
+const CabinsList = ({ getBookId, id, cabinData }) => {
+>>>>>>> 54431651256ed29d0a2c830c4e589354ed83bd4f
     const [cabins, setCabins] = useState([]);
     const [show, setShow] = useState(false);
     const [showCabinData, setCabinData] = useState({ title: "" });
@@ -69,7 +73,7 @@ const CabinsList = ({ getBookId, profile }) => {
                         <th>Emp Name</th>
                         <th>Emp Email</th>
                         <th>Emp Designation</th>
-                        {/* <th>Date & Time</th> */}
+                        <th>Date & Time</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -82,7 +86,8 @@ const CabinsList = ({ getBookId, profile }) => {
                                 <td>{doc.name}</td>
                                 <td>{doc.email}</td>
                                 <td>{doc.designation}</td>
-                                {/* <td>{doc.date}</td> */}
+                                <td> <input type="date" value={doc.date} id="birthday" name="birthday" /></td>
+
                                 <td>
                                     <Button
                                         className="edit"

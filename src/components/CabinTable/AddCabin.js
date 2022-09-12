@@ -4,7 +4,7 @@ import CabinDataService from "../CabinTable/CabinService";
 import "../../styles/Login.css";
 import DateTimePicker from 'react-datetime-picker';
 
-const AddCabin = ({ id, setCabinId }) => {
+const AddCabin = ({ id, setCabinId, cabinData }) => {
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -82,15 +82,15 @@ const AddCabin = ({ id, setCabinId }) => {
             {message?.msg}
           </Alert>
         )}
-<center><h5>Confirm Booking</h5>
-<div className="cabindata">
-  <p>Cabin Name : <span>KGF</span></p>
-  <p>Cabin Size : <span>7</span></p>
-</div>
-</center>
+        <center><h5>Confirm Booking</h5>
+          <div className="cabindata">
+            <p>Cabin Name : <span>KGF</span></p>
+            <p>Cabin Size : <span>7</span></p>
+          </div>
+        </center>
 
         <Form className="form-signin" onSubmit={handleSubmit}>
-          
+
           <Form.Group className="mb-3" controlId="formBookTitle">
             <InputGroup>
               <Form.Control
@@ -134,7 +134,11 @@ const AddCabin = ({ id, setCabinId }) => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
-            <DateTimePicker className="form-control" onChange={setDate} value={date} />
+              {/* <DateTimePicker className="form-control" onChange={setDate} value={date} /> */}
+
+              <input type="date" onChange={(e) => setDate(e.target.value)}/>
+
+
             </InputGroup>
           </Form.Group>
 

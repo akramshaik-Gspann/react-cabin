@@ -3,7 +3,7 @@ import { Table, Modal } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
 import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
 
-const CabinsList = ({ getBookId }) => {
+const CabinsList = ({ getBookId, id, cabinData }) => {
     const [cabins, setCabins] = useState([]);
     const [show, setShow] = useState(false);
     const [showCabinData, setCabinData] = useState({ title: "" });
@@ -46,7 +46,7 @@ const CabinsList = ({ getBookId }) => {
                         <th>Emp Name</th>
                         <th>Emp Email</th>
                         <th>Emp Designation</th>
-                        {/* <th>Date & Time</th> */}
+                        <th>Date & Time</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -59,7 +59,8 @@ const CabinsList = ({ getBookId }) => {
                                 <td>{doc.name}</td>
                                 <td>{doc.email}</td>
                                 <td>{doc.designation}</td>
-                                {/* <td>{doc.date}</td> */}
+                                <td> <input type="date" value={doc.date} id="birthday" name="birthday" /></td>
+
                                 <td>
                                     <Button
                                         className="edit"

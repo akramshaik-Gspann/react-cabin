@@ -28,47 +28,10 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
 
     const getCabins = async () => {
         const data = await CabinDataService.getAllCabins();
-        console.log(data.docs[2]);
-        console.log(data)
-        console.log(data.docs)
-
-        console.log("Profile Email Id:", profile._delegate.email); //User Email Id
-        console.log("Profile Email Id:", profile._delegate.id); //User Email Id
-        console.log("My Bookings List Email Id:", data.docs); //Bookings List
-        console.log("Data", data.docs);
-
-        let filtered = data.docs;
-        let dataFiltered = [];
-
-        filtered.forEach((x) => {
-            dataFiltered.push(x._document.data.value.mapValue.fields);
-        })
-        console.log("data Filtered", dataFiltered)
-
-        let dataFiltered1 = [];
-
-        dataFiltered.forEach((x) => {
-            console.log("Email...", x.email.stringValue === profile._delegate.email)
-            if (x.email.stringValue === profile._delegate.email) {
-                dataFiltered1.push(x);
-            }
-        })
-
-        console.log("filter....", dataFiltered1);
-
-        setCabins(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        //--------------------------------------------------
-
-        //Tried but unable to complete
-
-        // dataFiltered = dataFiltered.filter((x)=>{
-        // console.log(x.email);
-        // console.log("Email...", x.email.stringValue === profile._delegate.email)
-        //  x.email.stringValue === profile._delegate.email 
-        // })
-
-        // console.log("filter....", dataFiltered);
-
+        let dataFilter = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        dataFilter = dataFilter.filter(x => x.email === profile._delegate.email)
+        setCabins(dataFilter);
+        // setCabins(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
     const deleteHandler = async (id) => {

@@ -24,7 +24,7 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
-    if (name === "" || email === "" || designation === "" || date === "") {
+    if (title === "" || name === "" || email === "" || designation === "" || date === "") {
       setMessage({ error: true, msg: "All fields are mandatory!" });
       return;
     }

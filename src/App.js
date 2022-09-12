@@ -46,8 +46,8 @@ function App() {
             <Route exact path='/product' element={<Products />} />
             {/* <Route exact path='/about' element={<About />} />
             <Route exact path='/contact' element={<Contact />} /> */}
-            <Route path="/allbookings" element={<CabinsBookings profile={profile} />} />
-            <Route path="/cabinconfirmation" element={<UserRoute> <CabinConfirmation /> </UserRoute>} />
+            <Route path="/allbookings" element={<CabinsBookings profile={profile} cabinData={cabinData} />} />
+            <Route path="/cabinconfirmation" element={<UserRoute> <CabinConfirmation cabinData={cabinData} /> </UserRoute>} />
           </Routes>
         </div>
       </Router>

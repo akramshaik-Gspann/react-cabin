@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Table, Modal } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
 import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { doc } from "firebase/firestore";
 
-<<<<<<< HEAD
-const CabinsList = ({ getBookId, profile }) => {
+const CabinsList = ({ getBookId, profile, id, cabinData }) => {
 
     console.log(profile);
-=======
-const CabinsList = ({ getBookId, id, cabinData }) => {
->>>>>>> 54431651256ed29d0a2c830c4e589354ed83bd4f
     const [cabins, setCabins] = useState([]);
     const [show, setShow] = useState(false);
     const [showCabinData, setCabinData] = useState({ title: "" });
@@ -34,24 +31,44 @@ const CabinsList = ({ getBookId, id, cabinData }) => {
         console.log(data.docs[2]);
         console.log(data)
         console.log(data.docs)
-        
-        console.log(profile._delegate.email);
 
-        setCabins(data.docs.filter((doc) => { 
-        console.log(doc.data().email === profile._delegate.email ); 
-           if(doc.data().email !== profile._delegate.email){
-            return doc;
-           };
-        }));
+        console.log("Profile Email Id:", profile._delegate.email); //User Email Id
+        console.log("Profile Email Id:", profile._delegate.id); //User Email Id
+        console.log("My Bookings List Email Id:", data.docs); //Bookings List
+        console.log("Data", data.docs);
 
-        // setCabins(data.docs.filter(doc => {
-        //     console.log(profile._delegate.email)
-        //     if (data.docs._delegate.email === data.docs._document.data.value.mapValue.fields.email) {
-        //         return doc
-        //     }
-        // }));
-        // setCabins(data.docs.filter((doc) => ({ ...doc.data(), id: doc.id })));
+        let filtered = data.docs;
+        let dataFiltered = [];
+
+        filtered.forEach((x) => {
+            dataFiltered.push(x._document.data.value.mapValue.fields);
+        })
+        console.log("data Filtered", dataFiltered)
+
+        let dataFiltered1 = [];
+
+        dataFiltered.forEach((x) => {
+            console.log("Email...", x.email.stringValue === profile._delegate.email)
+            if (x.email.stringValue === profile._delegate.email) {
+                dataFiltered1.push(x);
+            }
+        })
+
+        console.log("filter....", dataFiltered1);
+
         setCabins(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        //--------------------------------------------------
+
+        //Tried but unable to complete
+
+        // dataFiltered = dataFiltered.filter((x)=>{
+        // console.log(x.email);
+        // console.log("Email...", x.email.stringValue === profile._delegate.email)
+        //  x.email.stringValue === profile._delegate.email 
+        // })
+
+        // console.log("filter....", dataFiltered);
+
     };
 
     const deleteHandler = async (id) => {
@@ -87,13 +104,11 @@ const CabinsList = ({ getBookId, id, cabinData }) => {
                                 <td>{doc.email}</td>
                                 <td>{doc.designation}</td>
                                 <td> <input type="date" value={doc.date} id="birthday" name="birthday" /></td>
-
                                 <td>
                                     <Button
                                         className="edit"
                                         variant="secondary"
                                         onClick={(e) => handleShow(doc)}
-                                    // onClick={handleShow}
                                     >Edit <i className="fa fa-pencil" aria-hidden="true"></i>
                                     </Button>
                                     <Modal className="right" show={show} onHide={handleClose}>

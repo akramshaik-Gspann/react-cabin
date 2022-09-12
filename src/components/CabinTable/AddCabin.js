@@ -3,8 +3,14 @@ import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
 import "../../styles/Login.css";
 import DateTimePicker from 'react-datetime-picker';
+import { useSelector } from "react-redux";
 
-const AddCabin = ({ id, setCabinId, cabinData }) => {
+const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
+
+  console.log("Cabin Data for confirm Booking", cabinData);
+  console.log("Cabin Data for confirm Booking", cabinData.Newcabin);
+  // console.log("Profle Email Id:", profile);
+
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,10 +19,12 @@ const AddCabin = ({ id, setCabinId, cabinData }) => {
   const [flag, setFlag] = useState(true);
   const [message, setMessage] = useState({ error: false, msg: "" });
   const [date, setDate] = useState(new Date());
+  // const { currentUser } = useSelector((state) => state.user);
+  // console.log(currentUser)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
-    if (title === "" || name === "" || email === "" || designation === "" || date === "") {
+    if (name === "" || email === "" || designation === "" || date === "") {
       setMessage({ error: true, msg: "All fields are mandatory!" });
       return;
     }
@@ -84,19 +92,18 @@ const AddCabin = ({ id, setCabinId, cabinData }) => {
         )}
         <center><h5>Confirm Booking</h5>
           <div className="cabindata">
-            <p>Cabin Name : <span>KGF</span></p>
-            <p>Cabin Size : <span>7</span></p>
+            <p>Cabin Name : <span>{cabinData.Newcabin}</span></p>
+            <p>Cabin Size : <span>{cabinData.capacity}</span></p>
           </div>
         </center>
 
         <Form className="form-signin" onSubmit={handleSubmit}>
-
           <Form.Group className="mb-3" controlId="formBookTitle">
             <InputGroup>
               <Form.Control
                 type="text"
                 placeholder="Cabin Name"
-                value={title}
+                value={cabinData.title}
                 onChange={(e) => setTitle(e.target.value)}
               />
             </InputGroup>
@@ -107,7 +114,7 @@ const AddCabin = ({ id, setCabinId, cabinData }) => {
               <Form.Control
                 type="text"
                 placeholder="Emp Name"
-                value={name}
+                value={cabinData.name}
                 onChange={(e) => setName(e.target.value)}
               />
             </InputGroup>
@@ -117,7 +124,7 @@ const AddCabin = ({ id, setCabinId, cabinData }) => {
               <Form.Control
                 type="email"
                 placeholder="Emp Email"
-                value={email}
+                value={cabinData.email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </InputGroup>
@@ -127,7 +134,7 @@ const AddCabin = ({ id, setCabinId, cabinData }) => {
               <Form.Control
                 type="text"
                 placeholder="Emp Designation"
-                value={designation}
+                value={cabinData.designation}
                 onChange={(e) => setDesignation(e.target.value)}
               />
             </InputGroup>
@@ -135,35 +142,9 @@ const AddCabin = ({ id, setCabinId, cabinData }) => {
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
               {/* <DateTimePicker className="form-control" onChange={setDate} value={date} /> */}
-
-              <input type="date" onChange={(e) => setDate(e.target.value)}/>
-
-
+              <input type="date" value={cabinData.date} onChange={(e) => setDate(e.target.value)} />
             </InputGroup>
           </Form.Group>
-
-          {/* <ButtonGroup aria-label="Basic example" className="mb-3">
-            <Button
-              disabled={flag}
-              variant="success"
-              onClick={(e) => {
-                setStatus("Available");
-                setFlag(true);
-              }}
-            >
-              Available
-            </Button>
-            <Button
-              variant="danger"
-              disabled={!flag}
-              onClick={(e) => {
-                setStatus("Not Available");
-                setFlag(false);
-              }}
-            >
-              Not Available
-            </Button>
-          </ButtonGroup> */}
           <div className="col-12 text-center">
             <Button className="signinb" type="Submit">
               Confirm Booking

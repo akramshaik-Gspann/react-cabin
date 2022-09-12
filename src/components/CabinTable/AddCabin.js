@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
+import { Form, Alert, InputGroup, Button } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
 import "../../styles/Login.css";
-import DateTimePicker from 'react-datetime-picker';
 import { useSelector } from "react-redux";
 
 const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
@@ -15,8 +14,6 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [designation, setDesignation] = useState("");
-  const [status, setStatus] = useState("Available");
-  const [flag, setFlag] = useState(true);
   const [message, setMessage] = useState({ error: false, msg: "" });
   const [date, setDate] = useState(new Date());
   // const { currentUser } = useSelector((state) => state.user);
@@ -141,7 +138,6 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
-              {/* <DateTimePicker className="form-control" onChange={setDate} value={date} /> */}
               <input type="date" value={cabinData.date} onChange={(e) => setDate(e.target.value)} />
             </InputGroup>
           </Form.Group>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Table, Modal } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
-import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
+import {  Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { doc } from "firebase/firestore";
 
 const CabinsList = ({ getBookId, profile, id, cabinData }) => {
 

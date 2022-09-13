@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Modal } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
-import {  Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const CabinsList = ({ getBookId, profile, id, cabinData }) => {
@@ -78,7 +78,22 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
                                         </Modal.Header>
                                         <Modal.Body>
                                             <center>
-                                                {/* <input  value={showCabinData.title} /> */}
+                                                <div className="form-group">
+                                                    <input className="form-control" type="text" value={showCabinData.title} />
+                                                </div>
+                                                <br />
+                                                <div className="form-group">
+                                                    <input className="form-control" type="text" value={showCabinData.name} />
+                                                </div>
+                                                <br />
+                                                <div className="form-group">
+                                                    <input className="form-control" type="email" value={showCabinData.email} />
+                                                </div>
+                                                <br />
+                                                <div className="form-group">
+                                                    <input className="form-control" type="date" value={showCabinData.date} />
+                                                </div>
+                                                <br />
                                                 <button onClick={updateHandler}>Update</button>
                                             </center>
                                         </Modal.Body>

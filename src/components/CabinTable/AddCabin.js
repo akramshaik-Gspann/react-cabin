@@ -100,7 +100,7 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
               <Form.Control
                 type="text"
                 placeholder="Cabin Name"
-                value={cabinData.title}
+                value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
             </InputGroup>
@@ -111,7 +111,7 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
               <Form.Control
                 type="text"
                 placeholder="Emp Name"
-                value={cabinData.name}
+                value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </InputGroup>
@@ -121,7 +121,7 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
               <Form.Control
                 type="email"
                 placeholder="Emp Email"
-                value={cabinData.email}
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </InputGroup>
@@ -131,14 +131,14 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
               <Form.Control
                 type="text"
                 placeholder="Emp Designation"
-                value={cabinData.designation}
+                value={designation}
                 onChange={(e) => setDesignation(e.target.value)}
               />
             </InputGroup>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
-              <input type="date" value={cabinData.date} onChange={(e) => setDate(e.target.value)} />
+              <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
             </InputGroup>
           </Form.Group>
           <div className="col-12 text-center">

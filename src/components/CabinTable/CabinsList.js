@@ -10,7 +10,7 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
     const [cabins, setCabins] = useState([]);
     const [show, setShow] = useState(false);
     const [showCabinData, setCabinData] = useState({ title: "" });
-
+    const [date, setDate] = useState(new Date());
     const { currentUser } = useSelector((state) => state.user);
     const handleClose = () => setShow(false);
     const handleShow = (doc) => {
@@ -91,7 +91,7 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
                                                 </div>
                                                 <br />
                                                 <div className="form-group">
-                                                    <input className="form-control" type="date" value={showCabinData.date} />
+                                                    <input className="form-control" type="date" value={showCabinData.date} onChange={(e) => setDate(e.target.value)} />
                                                 </div>
                                                 <br />
                                                 <button onClick={updateHandler}>Update</button>

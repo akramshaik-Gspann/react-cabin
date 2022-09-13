@@ -75,6 +75,16 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
       editHandler();
     }
   }, [id]);
+
+  const disablePastDate = () => {
+    const today = new Date();
+    const dd = String(today.getDate() + 1).padStart(2, "0");
+    const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    const yyyy = today.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+};
+
+
   return (
     <>
       <div className="p-4 box" id="logreg-forms">
@@ -138,7 +148,7 @@ const AddCabin = ({ id, setCabinId, cabinData, profile }) => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
-              <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+              <input className="form-control" type="date" value={date} onChange={(e) => setDate(e.target.value)} min={disablePastDate()} />
             </InputGroup>
           </Form.Group>
           <div className="col-12 text-center">

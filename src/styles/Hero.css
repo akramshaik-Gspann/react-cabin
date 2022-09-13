@@ -6,6 +6,9 @@
     display: flex;
   }
   
+  .carousel-inner img{
+    height: 550px;
+  }
  
   .column {
     flex: 50.33%;
@@ -19,4 +22,14 @@
 
   .flexcabin img{
     height: 20rem;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .myform .row{
+      padding: 0px;
+    }
+    .carousel-inner img{
+      height: auto;
+    }
   }

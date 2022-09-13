@@ -9,7 +9,7 @@ function Footer() {
       <div className='container'>
       {/* <center><h1 className='namefooter'>@GSPANN</h1></center> */}
       <div className="row">
-        <div className="col-2">
+        <div className="col-md-2 col-xs-12">
           <h5>Services</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Content Management</a></li>
@@ -20,7 +20,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="col-2">
+        <div className="col-md-2 col-xs-12">
           <h5>Products</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">BEAT™</a></li>
@@ -31,7 +31,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="col-2">
+        <div className="col-md-2 col-xs-12">
           <h5>About Us</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Resources</a></li>
@@ -42,7 +42,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="col-4 offset-1">
+        <div className="col-md-4 offset-1 col-xs-12">
           <form>
             <h5>Connect With Us</h5>
             <p>362 Fairview Way, Milpitas, CA 95035408-263-3435</p>

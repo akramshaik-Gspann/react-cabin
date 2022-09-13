@@ -70,21 +70,21 @@ function Home() {
           </div>
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={picone} className="d-block w-100" alt="..." height={550} />
+              <img src={picone} className="d-block w-100" alt="..." />
               <div class="carousel-caption d-none d-md-block">
 
                 <h2>"Meeting Rooms"</h2>
               </div>
             </div>
             <div className="carousel-item">
-              <img src={pictwo} className="d-block w-100" alt="..." height={550} />
+              <img src={pictwo} className="d-block w-100" alt="..." />
               <div class="carousel-caption d-none d-md-block">
 
                 <h2>"For you, your team and clients" </h2>
               </div>
             </div>
             <div className="carousel-item">
-              <img src={picthree} className="d-block w-100" alt="..." height={550} />
+              <img src={picthree} className="d-block w-100" alt="..." />
               <div class="carousel-caption d-none d-md-block">
 
                 <h2>"Private, Secure, Equipped"</h2>

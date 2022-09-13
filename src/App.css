@@ -72,3 +72,33 @@ th {
     transform: rotate(360deg);
   }
 }
+.for-mobile{
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .cabin-table{
+    overflow-x: scroll;
+    padding: 0px;
+  }
+  .delete{
+    font-size: 13px;
+    padding: 0;
+    background-color: inherit;
+    color: #000;
+    border: 0px;
+  }
+  .edit{
+    font-size: 13px;
+    padding: 0;
+    background-color: inherit;
+    color: #000;
+    border: 0px;
+  }
+ .for-desktop{
+  display: none;
+ }
+ .for-mobile{
+  display: block;
+ }
+}
+

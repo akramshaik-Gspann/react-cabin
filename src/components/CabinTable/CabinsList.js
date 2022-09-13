@@ -36,6 +36,16 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
         await CabinDataService.deleteCabin(id);
         getCabins();
     };
+
+    const disablePastDate = () => {
+        const today = new Date();
+        const dd = String(today.getDate() + 1).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        const yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
+    };
+
+
     return (
         <>
             <div className="button_refresh">
@@ -43,6 +53,7 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
                     Refresh List
                 </Button>
             </div>
+            <div className="cabin-table">
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
@@ -65,7 +76,7 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
                                 <td>{doc.email}</td>
                                 <td>{doc.designation}</td>
                                 <td> <input type="date" value={doc.date} id="birthday" name="birthday" /></td>
-                                <td>
+                                <td className="for-desktop">
                                     <Button
                                         className="edit"
                                         variant="secondary"
@@ -90,7 +101,7 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
                                                 </div>
                                                 <br />
                                                 <div className="form-group">
-                                                    <input className="form-control" type="date" defaultValue={showCabinData.date} onChange={(e) => setDate(e.target.value)} />
+                                                    <input className="form-control" type="date" defaultValue={showCabinData.date} onChange={(e) => setDate(e.target.value)} min={disablePastDate()} />
                                                 </div>
                                                 <br />
                                                 <button onClick={updateHandler}>Update</button>
@@ -104,11 +115,52 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
                                     >Delete <i className="fa fa-trash" aria-hidden="true"></i>
                                     </Button>
                                 </td>
+                                <td className="for-mobile" >
+                                <Button
+                                        className="edit"
+                                        variant="secondary"
+                                        onClick={(e) => handleShow(doc)}
+                                    ><i className="fa fa-pencil" aria-hidden="true"></i>
+                                    </Button>
+                                    <Modal className="right" show={show} onHide={handleClose}>
+                                        <Modal.Header closeButton>
+                                        </Modal.Header>
+                                        <Modal.Body>
+                                            <center>
+                                                <div className="form-group">
+                                                    <input className="form-control" type="text" defaultValue={showCabinData.title} readOnly/>
+                                                </div>
+                                                <br />
+                                                <div className="form-group">
+                                                    <input className="form-control" type="text" defaultValue={showCabinData.name} readOnly/>
+                                                </div>
+                                                <br />
+                                                <div className="form-group">
+                                                    <input className="form-control" type="email" defaultValue={showCabinData.email} readOnly/>
+                                                </div>
+                                                <br />
+                                                <div className="form-group">
+                                                    <input className="form-control" type="date" defaultValue={showCabinData.date} onChange={(e) => setDate(e.target.value)} min={disablePastDate()} />
+                                                </div>
+                                                <br />
+                                                <button onClick={updateHandler}>Update</button>
+                                            </center>
+                                        </Modal.Body>
+                                    </Modal>
+                                    <Button
+                                        variant="danger"
+                                        className="delete"
+                                        onClick={(e) => deleteHandler(doc.id)}
+                                    ><i className="fa fa-trash" aria-hidden="true"></i>
+                                    </Button>
+                                </td>
                             </tr>
                         );
                     })}
                 </tbody>
             </Table>
+            </div>
+            
         </>
     );
 };

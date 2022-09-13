@@ -21,3 +21,10 @@
     color: #789;
     font-weight: 500;
 }
+
+@media only screen and (max-width: 767px) {
+   .offset-1{
+    margin-left: 0px;
+   }
+    
+}

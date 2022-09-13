@@ -19,7 +19,7 @@ function Details({ setCabinData }) {
                     <div className="details" key={item._id}>
                         <img src={item.src} alt="" />
                         <div className="box">
-                            <div className="row">
+                            <div className="">
                                 <h2>{item.title}</h2>
                                 <span>TeamSize:{item.capacity}</span>
                             </div>

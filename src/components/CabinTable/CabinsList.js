@@ -3,9 +3,7 @@ import { Table, Modal } from "react-bootstrap";
 import CabinDataService from "../CabinTable/CabinService";
 import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
-
 const CabinsList = ({ getBookId, profile, id, cabinData }) => {
-
     console.log(profile);
     const [cabins, setCabins] = useState([]);
     const [show, setShow] = useState(false);
@@ -17,22 +15,23 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
         setCabinData(doc);
         setShow(true);
     }
-    const updateHandler = () => {
-        console.log(showCabinData);
-        // await CabinDataService.updateCabin(id, newCabin);
+    const updateHandler = async () => {
+        showCabinData.date = date;
+        await CabinDataService.updateCabin(showCabinData.id, showCabinData);
+        console.log("showCabinData", showCabinData);
+        handleClose(true);
     }
     useEffect(() => {
         getCabins();
     }, []);
-
     const getCabins = async () => {
         const data = await CabinDataService.getAllCabins();
+        console.log("profile", profile._delegate.email);
         let dataFilter = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        dataFilter = dataFilter.filter(x => x.email === profile._delegate.email)
+        // dataFilter = dataFilter.filter(x => x.email === profile._delegate.email)
         setCabins(dataFilter);
         // setCabins(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
-
     const deleteHandler = async (id) => {
         await CabinDataService.deleteCabin(id);
         getCabins();
@@ -79,19 +78,19 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
                                         <Modal.Body>
                                             <center>
                                                 <div className="form-group">
-                                                    <input className="form-control" type="text" value={showCabinData.title} />
+                                                    <input className="form-control" type="text" defaultValue={showCabinData.title} readOnly/>
                                                 </div>
                                                 <br />
                                                 <div className="form-group">
-                                                    <input className="form-control" type="text" value={showCabinData.name} />
+                                                    <input className="form-control" type="text" defaultValue={showCabinData.name} readOnly/>
                                                 </div>
                                                 <br />
                                                 <div className="form-group">
-                                                    <input className="form-control" type="email" value={showCabinData.email} />
+                                                    <input className="form-control" type="email" defaultValue={showCabinData.email} readOnly/>
                                                 </div>
                                                 <br />
                                                 <div className="form-group">
-                                                    <input className="form-control" type="date" value={showCabinData.date} onChange={(e) => setDate(e.target.value)} />
+                                                    <input className="form-control" type="date" defaultValue={showCabinData.date} onChange={(e) => setDate(e.target.value)} />
                                                 </div>
                                                 <br />
                                                 <button onClick={updateHandler}>Update</button>
@@ -113,5 +112,4 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
         </>
     );
 };
-
 export default CabinsList;

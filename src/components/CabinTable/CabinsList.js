@@ -28,7 +28,7 @@ const CabinsList = ({ getBookId, profile, id, cabinData }) => {
         const data = await CabinDataService.getAllCabins();
         console.log("profile", profile._delegate.email);
         let dataFilter = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        // dataFilter = dataFilter.filter(x => x.email === profile._delegate.email)
+        dataFilter = dataFilter.filter(x => x.email === profile._delegate.email)
         setCabins(dataFilter);
         // setCabins(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
